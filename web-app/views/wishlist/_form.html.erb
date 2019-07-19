@@ -1,6 +1,23 @@
 <%= form_for @wishlist do |f| %>
-  <%= f.label :list_name %>:
-  <%= f.text :list_name %>
+  <div>
+    <%= f.label :list_name %>:
+    <%= f.text :list_name %>
+  </div>
 
-  <%= f.label :list_category %>
-  <%= f.select :list_category %>
+  <div>
+    <%= f.label :list_category %>
+    <%= f.select :list_category, ['sala', 'quarto', 'banheiro', 'cozinha', 'área de serviço'], required: true %>
+  </div>
+
+    <% wishlist_items.each do |wishlist_item| %>
+      <div>
+        <%= f.label :item_name %>
+        <%= f.text :item_name %>
+      </div>
+      <div>
+        <%= f.label :item_url %>
+        <%= f.text :item_url %>
+      </div>
+    <% end %>
+
+  
